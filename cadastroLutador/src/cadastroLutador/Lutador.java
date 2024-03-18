@@ -5,6 +5,7 @@ public class Lutador {
 	private String nome; 
 	private String nacionalidade;
 	private int idade; 
+	private String sexo;
 	private float altura;
 	private float peso;
 	private String categoria;
@@ -13,11 +14,12 @@ public class Lutador {
 	private int empates;
 	
 	//Método Construtor
-	public Lutador (String no, String na, int id,
+	public Lutador (String no, String na, int id, String se,
 					float al, float pe, int vi, int de, int em) {
 		this.nome = no;
 		this.nacionalidade = na;
 		this.idade = id;
+		this.sexo = se;
 		this.altura = al;
 		this.setPeso(pe);
 		this.vitorias = vi;
@@ -49,6 +51,14 @@ public class Lutador {
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
+	
+	public String getSexo() {
+		return sexo;
+	}
+	
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
 
 	public float getAltura() {
 		return altura;
@@ -77,6 +87,10 @@ public class Lutador {
 								 //Pois é responsável por definir a categoria do objeto com base no peso.
 		if (this.peso < 52.0f) {
 			this.categoria = "Inválido";
+		}else if (this.peso <= 58.9f) {
+			this.categoria = "Peso galo";
+		}else if (this.peso <= 63.7f) {
+			this.categoria = "Peso pena";
 		}else if (this.peso <= 71.8f) {
 			this.categoria = "Peso leve";
 		}else if (this.peso <= 84.9f) {
@@ -125,9 +139,11 @@ public class Lutador {
 		System.out.println("Derrotas: " + this.getDerrotas());
 	}
 	public void status() {
+		System.out.println("----- STATUS DO LUTADOR -----");
 		System.out.println("Vitórias: " + this.getVitorias());
 		System.out.println("Empates " + this.getEmpates());
 		System.out.println("Derrotas: " + this.getDerrotas());
+		
 	}
 	//Todas as vezes que este método for chamado irá contabilizar mais uma vitória 
 	public void ganharLutas() {
