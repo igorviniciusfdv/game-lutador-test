@@ -9,8 +9,6 @@ public class Luta {
 	private boolean aprovada;
 	int rounds = 1;
 	int stamina1 = 100, stamina2 = 100;
-	int totalperdido1 = 0;
-	int totalperdido2 = 0;
 	//Métodos Públcos
 	public void marcarLuta(Lutador l1, Lutador l2) { // l1 e l2 são objetos da classe Lutador 
 		if (l1.getCategoria().equals(l2.getCategoria()) && l1 != l2 && l1.getSexo().equals(l2.getSexo())) {
