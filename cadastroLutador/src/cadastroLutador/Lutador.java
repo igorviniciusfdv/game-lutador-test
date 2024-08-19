@@ -2,7 +2,7 @@ package cadastroLutador;
 
 public class Lutador {
 	//Atributos
-	private String nome; 
+	protected String nome; 
 	private String nacionalidade;
 	private int idade; 
 	private String sexo;
@@ -12,10 +12,11 @@ public class Lutador {
 	private int vitorias;
 	private int derrotas;
 	private int empates;
+	private int numcadastro;
 	
 	//Método Construtor
 	public Lutador (String no, String na, int id, String se,
-					float al, float pe, int vi, int de, int em) {
+					float al, float pe, int vi, int de, int em, int nm) {
 		this.nome = no;
 		this.nacionalidade = na;
 		this.idade = id;
@@ -25,6 +26,7 @@ public class Lutador {
 		this.vitorias = vi;
 		this.derrotas = de;
 		this.empates = em;
+		this.numcadastro = nm;
 	}
 	
 	//Métodos especiais 
@@ -157,4 +159,13 @@ public class Lutador {
 	public void empatarLutas() {
 		this.setEmpates(this.getEmpates() + 1);
 	}
+
+	public int getNumcadastro() {
+		return numcadastro;
+	}
+
+	public void setNumcadastro(int numcadastro) {
+		this.numcadastro = numcadastro;
+	}
+
 }
